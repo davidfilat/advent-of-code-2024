@@ -1,0 +1,17 @@
+[project]
+name = "advent-of-code-2024"
+version = "0.1.0"
+description = "Solutions for Advent of Code 2024 coding challenges"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cytoolz>=1.0.0",
+    "more-itertools>=10.5.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=24.10.0",
+    "mypy>=1.13.0",
+    "ruff>=0.8.1",
+]
