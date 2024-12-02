@@ -1,5 +1,6 @@
 from pathlib import Path
-from typing import Any
+from pprint import pprint
+from typing import Any, TypeVar
 
 
 def get_day_input(day: int):
@@ -11,3 +12,15 @@ def get_day_input(day: int):
 
 def print_result(part: int, result: Any) -> None:
     print(f"Part {part}: {result}")
+
+
+def parse_int_input(file: str) -> list[list[int]]:
+    return [[int(n) for n in line.split()] for line in file.split("\n")]
+
+
+T = TypeVar("T")
+
+
+def do_print(x: T) -> T:
+    pprint(x)
+    return x

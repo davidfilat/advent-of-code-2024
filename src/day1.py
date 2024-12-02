@@ -6,13 +6,9 @@ from cytoolz import juxt, first, second, compose, identity
 from cytoolz.curried import compose_left, map, get
 from toolz import pipe
 
-from utils.common import get_day_input, print_result
+from utils.common import get_day_input, parse_int_input, print_result
 from utils.functools import apply
 from utils.matrices import transpose_2d_matrix
-
-
-def parse_input(file: str) -> list[list[int]]:
-    return [[int(n) for n in line.split()] for line in file.split("\n")]
 
 
 part_1 = compose_left(
@@ -40,7 +36,7 @@ part_2 = compose_left(
 )
 
 if __name__ == "__main__":
-    table = pipe("1", get_day_input, parse_input)
+    table = pipe("1", get_day_input, parse_int_input)
 
     print_result(1, part_1(table))
     print_result(2, part_2(table))
