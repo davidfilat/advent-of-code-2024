@@ -1,15 +1,14 @@
 import re
 from dataclasses import dataclass, field
-from functools import reduce, partial
+from functools import partial, reduce
 from operator import mul
 from typing import cast
 
-from cytoolz import compose, first, pipe, flip
+from cytoolz import compose, first, flip, pipe
 from cytoolz.curried import cons, map
 
 from utils.common import get_day_input, print_result
 from utils.functools import apply
-
 
 TCOMMAND = tuple[str, str]
 
@@ -64,6 +63,6 @@ part_2 = compose(
     find_operation_with_conditions,
 )
 if __name__ == "__main__":
-    table = pipe("3", get_day_input)
+    table = get_day_input(3)
     print_result(1, part_1(table))
     print_result(2, part_2(table))

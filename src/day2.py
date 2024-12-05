@@ -67,6 +67,6 @@ part_2 = compose_left(
 )
 
 if __name__ == "__main__":
-    table = pipe("2", get_day_input, parse_int_input)
+    table = pipe(2, get_day_input, parse_int_input)
     print_result(1, part_1(table))
     print_result(2, part_2(table))

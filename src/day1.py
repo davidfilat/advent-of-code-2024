@@ -1,15 +1,14 @@
 from collections import Counter
-from operator import sub, mul
+from operator import mul, sub
 from typing import Callable
 
-from cytoolz import juxt, first, second, compose, identity
-from cytoolz.curried import compose_left, map, get
+from cytoolz import compose, first, identity, juxt, second
+from cytoolz.curried import compose_left, get, map
 from toolz import pipe
 
 from utils.common import get_day_input, parse_int_input, print_result
 from utils.functools import apply
 from utils.matrices import transpose_2d_matrix
-
 
 part_1 = compose_left(
     compose(map(sorted), transpose_2d_matrix),  # Sort columns
@@ -36,7 +35,7 @@ part_2 = compose_left(
 )
 
 if __name__ == "__main__":
-    table = pipe("1", get_day_input, parse_int_input)
+    table = pipe(1, get_day_input, parse_int_input)
 
     print_result(1, part_1(table))
     print_result(2, part_2(table))
