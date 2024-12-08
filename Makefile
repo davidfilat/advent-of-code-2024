@@ -1,4 +1,4 @@
-PYTHON := python
+PYTHON := pypy
 
 export PYTHONPATH := src:$(PYTHONPATH)
 
