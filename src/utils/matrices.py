@@ -1,18 +1,18 @@
-from typing import Iterable, List, Optional
+from typing import Iterable, Optional
 
 from cytoolz import compose
 from cytoolz.functoolz import curry
 
 
-def transpose_2d_matrix(matrix: List[List[int]]) -> List[List[int]]:
+def transpose_2d_matrix(matrix: list[list[int]]) -> list[list[int]]:
     return list(map(list, zip(*matrix)))
 
 
-def rotate_matrix(matrix: List[List[int]]) -> List[List[int]]:
+def rotate_matrix(matrix: list[list[int]]) -> list[list[int]]:
     return transpose_2d_matrix(matrix[::-1])
 
 
-def mirror_matrix(matrix: Iterable[List[int]]) -> Iterable[List[int]]:
+def mirror_matrix(matrix: Iterable[list[int]]) -> Iterable[list[int]]:
     return list(map(compose(list, reversed), matrix))
 
 
@@ -27,3 +27,12 @@ def find_coordinates(matrix: list[list[str]], target: str) -> Optional[tuple[int
         ),
         None,
     )
+
+
+def grid_to_string(matrix: list[list[any]]) -> str:
+    return "\n".join("".join(row) for row in matrix)
+
+
+def print_grid(grid: list[list[any]]) -> list[list[any]]:
+    print("\n" + grid_to_string(grid) + "\n")
+    return grid
